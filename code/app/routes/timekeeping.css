@@ -1,0 +1,127 @@
+/* Theme tokens: tweak these to change your look quickly */
+:root {
+  --tk-bg: #f4f4f5;          /* light grey page background */
+  --tk-card: #ffffff;        /* card surface */
+  --tk-border: #d4d4d8;      /* border lines (zinc-300-ish) */
+  --tk-divider: #e4e4e7;     /* divider lines (zinc-200-ish) */
+  --tk-muted: #71717a;       /* muted text (zinc-500/600-ish) */
+  --tk-text: #18181b;        /* main text (zinc-900-ish) */
+  --tk-soft: #fafafa;        /* soft surface (zinc-50-ish) */
+  --tk-softHover: #f4f4f5;   /* soft hover (zinc-100-ish) */
+  --tk-grid: #f0f0f3;        /* very light grid lines */
+  --tk-accent: #d6b25e;      /* gold accent */
+  --tk-accentHover: #e6c870;
+  --tk-accentSoftBg: rgba(214, 178, 94, 0.18);
+  --tk-accentSoftText: #6b4f12;
+  --tk-danger: #dc2626;      /* red-600-ish */
+  --tk-dangerBg: #fef2f2;    /* red-50-ish */
+  --tk-dangerBorder: #fecaca;/* red-200-ish */
+  --tk-overlay: rgba(0, 0, 0, 0.3);
+  --tk-darkBtn: #18181b;     /* dark button fill */
+  --tk-darkBtnHover: #27272a;
+}
+
+/* Page + text */
+.tk-page { background: var(--tk-bg); }
+.tk-text { color: var(--tk-text); }
+.tk-muted { color: var(--tk-muted); }
+.tk-subtle { color: #3f3f46; } /* zinc-700-ish */
+.tk-danger { color: var(--tk-danger); }
+.tk-accentText { color: #a16207; } /* amber-700-ish */
+
+/* Header + cards */
+.tk-header { border-bottom: 1px solid var(--tk-border); background: color-mix(in srgb, var(--tk-bg) 95%, transparent); }
+.tk-card { background: var(--tk-card); border: 1px solid var(--tk-border); }
+.tk-modal { background: var(--tk-card); border: 1px solid var(--tk-border); }
+
+/* Dividers */
+.tk-dividerBottom { border-bottom: 1px solid var(--tk-divider); }
+.tk-dividerTop { border-top: 1px solid var(--tk-divider); }
+.tk-dividerColor { border-color: var(--tk-divider); }
+
+/* Inputs */
+.tk-input {
+  background: var(--tk-card);
+  border: 1px solid var(--tk-border);
+  color: var(--tk-text);
+}
+.tk-input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--tk-accent) 55%, var(--tk-border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tk-accent) 25%, transparent);
+}
+
+/* Buttons */
+.tk-btn { border: 1px solid var(--tk-border); }
+.tk-btnSoft {
+  background: var(--tk-card);
+  color: var(--tk-text);
+}
+.tk-btnSoft:hover { background: var(--tk-soft); }
+
+.tk-btnDark {
+  background: var(--tk-darkBtn);
+  border-color: var(--tk-darkBtn);
+  color: white;
+}
+.tk-btnDark:hover { background: var(--tk-darkBtnHover); }
+
+.tk-btnAccent {
+  background: var(--tk-accent);
+  border-color: color-mix(in srgb, var(--tk-accent) 80%, #000);
+  color: #18181b;
+}
+.tk-btnAccent:hover { background: var(--tk-accentHover); }
+
+.tk-btnDanger {
+  background: var(--tk-dangerBg);
+  border-color: var(--tk-dangerBorder);
+  color: var(--tk-danger);
+}
+.tk-btnDanger:hover { filter: brightness(0.98); }
+
+/* Pills */
+.tk-pill { border: 1px solid var(--tk-border); }
+.tk-pillAccentSoft {
+  background: var(--tk-accentSoftBg);
+  border-color: color-mix(in srgb, var(--tk-accent) 35%, var(--tk-border));
+  color: var(--tk-accentSoftText);
+}
+
+/* Calendar frames + lines */
+.tk-frame { background: var(--tk-card); border: 1px solid var(--tk-divider); }
+.tk-gridLine { border-top: 1px solid var(--tk-grid); }
+.tk-dash { background: var(--tk-border); }
+
+/* Entry block + handle */
+.tk-entry { border: 1px solid var(--tk-divider); }
+.tk-entry:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
+
+.tk-handle {
+  background: color-mix(in srgb, var(--tk-border) 70%, transparent);
+}
+.tk-handle:hover {
+  background: color-mix(in srgb, var(--tk-accent) 55%, transparent);
+}
+
+.tk-grip { background: color-mix(in srgb, var(--tk-border) 60%, transparent); }
+
+/* Legend chip */
+.tk-legend {
+  border: 1px solid var(--tk-divider);
+  background: var(--tk-soft);
+}
+
+/* Overlay */
+.tk-overlay { background: var(--tk-overlay); }
+
+/* Chip text helpers for per-task colour badges */
+.tk-chipTextDark { color: #18181b; }
+.tk-chipTextLight { color: #ffffff; }
+
+/* Callout */
+.tk-callout {
+  border: 1px solid color-mix(in srgb, var(--tk-accent) 35%, var(--tk-border));
+  background: var(--tk-accentSoftBg);
+  color: var(--tk-accentSoftText);
+}
