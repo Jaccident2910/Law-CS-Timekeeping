@@ -25,7 +25,7 @@ function NarrativeView(){
     console.log("handleSubmit called")
     const result = await generateNarrative(internalNarrative);
     console.log("returned: ", result)
-    setInternalNarrative(result);
+    setExternalNarrative(result);
   }
 
   return (
@@ -125,7 +125,10 @@ function NarrativeView(){
             value={internalNarrative}
             onChange={(e) => setInternalNarrative(e.target.value)}
           ></textarea>
-          <button id="rewrite" type="button" className="formButton button" onClick={handleSubmit}>Rewrite using AI</button>
+        </div>
+        <div className="formField">
+          <button id="rewrite" type="button" className="formButton button" onClick={handleSubmit}>Generate client-facing narrative</button>
+          <label className="formNote">Note: this will overwrite any existing external narrative.</label>
         </div>
         <div className="formField">
           <label htmlFor="extNarr" className="formLabel">Narrative (client-facing)</label>
