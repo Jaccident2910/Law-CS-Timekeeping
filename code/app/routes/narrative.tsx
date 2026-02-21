@@ -15,62 +15,123 @@ function NarrativeView(){
   const [activityCode, setActivityCode] = useState('');
   const [internalNarrative, setInternalNarrative] = useState('');
   const [externalNarrative, setExternalNarrative] = useState('');
+  const [timerHours, setTimerHours] = useState(0);
+  const [timerMinutes, setTimerMinutes] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState(0);
 
   return (
-    <>
-      <h1>Name of Timer task</h1>
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 12, margin:"1%", width:'50%', border:'2px #a6a5a5 solid', padding:'1%' }}>
+      <h1 style={{ marginBottom: 8, fontSize: 18, fontWeight: 600 }}>
+        Smith v. Johnson – Contract Dispute
+      </h1>
       <form className="flex flex-col">
-
-        {/* TODO add in the timer */}
-        <label htmlFor="clientNo">Client number</label>
-        <input
-          id='clientNo'
-          type='text'
-          placeholder='e.g. TH46585HD'
-          value={clientNum}
-          onChange={(e) => setClientNum(e.target.value)}
-        ></input>
-              <label htmlFor="matterNo">Matter number</label>
-        <input
-          id='matterNo'
-          type='text'
-          placeholder='e.g. 56789'
-          value={matterNum}
-          onChange={(e) => setMatterNum(e.target.value)}
-        ></input>
-        <label htmlFor="taskCode">Task Code</label>
-        <input
-          id='taskCode'
-          type='text'
-          placeholder=''
-          value={taskCode}
-          onChange={(e) => setTaskCode(e.target.value)}
-        ></input>
-              <label htmlFor="activCode">Activity Code</label>
-        <input
-          id='activCode'
-          type='text'
-          placeholder=''
-          value={activityCode}
-          onChange={(e)=> setActivityCode(e.target.value)}
-        ></input>
-              <label htmlFor="intNarr">Narrative (internal) </label>
-        <textarea
-          id='intNarr'
-          rows={5}
-          placeholder='Your narrative here...'
-          onChange={(e) => setInternalNarrative(e.target.value)}
-        ></textarea>
-        <label htmlFor="extNarr">Narrative (client-facing)</label>
-        <textarea
-          id='extNarr'
-          rows={4}
-          placeholder=''
-          value={externalNarrative}
-          onChange={(e) => setExternalNarrative(e.target.value)}
-        ></textarea>
-        <button id="save" className="button">Save</button>
+        <div className="formField" >
+          <label htmlFor="timer" className="formLabel">Timer (HH:MM:SS)</label>
+          <div className="duration-picker">
+            <input 
+              className="timerInput" 
+              type="number" 
+              min="0" 
+              placeholder="HH" 
+              value={timerHours}
+              onChange={(e) => setTimerHours(Number(e.target.value))}
+            >
+            </input>
+            :
+            <input 
+              className="timerInput" 
+              type="number" 
+              min="0" 
+              max="59" 
+              placeholder="MM" 
+              value={timerMinutes}
+              onChange={(e) => setTimerMinutes(Number(e.target.value))}
+            >
+            </input>
+            :
+            <input 
+              className="timerInput" 
+              type="number" 
+              min="0" max="59" 
+              placeholder="SS" 
+              value={timerSeconds}
+              onChange={(e) => setTimerSeconds(Number(e.target.value))}
+            >
+            </input>
+          </div>
+          {/* <input className="formInput"
+            id='clientNo'
+            type='text'
+            placeholder='e.g. TH46585HD'
+            value={clientNum}
+            onChange={(e) => setClientNum(e.target.value)}
+          ></input> */}
+        </div>
+        <div className="formField" >
+          <label htmlFor="clientNo" className="formLabel">Client number</label>
+          <input className="formInput"
+            id='clientNo'
+            type='text'
+            placeholder='e.g. TH46585HD'
+            value={clientNum}
+            onChange={(e) => setClientNum(e.target.value)}
+          ></input>
+        </div>
+        <div className="formField" >
+          <label htmlFor="matterNo" className="formLabel">Matter number</label>
+          <input className="formInput"
+            id='matterNo'
+            type='text'
+            placeholder='e.g. 56789'
+            value={matterNum}
+            onChange={(e) => setMatterNum(e.target.value)}
+          ></input>
+        </div>
+        <div className="formField" >
+          <label htmlFor="taskCode" className="formLabel">Task Code</label>
+          <input className="formInput"
+            id='taskCode'
+            type='text'
+            placeholder=''
+            value={taskCode}
+            onChange={(e) => setTaskCode(e.target.value)}
+          ></input>
+        </div>
+        <div className="formField">
+          <label htmlFor="activCode" className="formLabel">Activity Code</label>
+          <input className="formInput"
+            id='activCode'
+            type='text'
+            placeholder=''
+            value={activityCode}
+            onChange={(e)=> setActivityCode(e.target.value)}
+          ></input>
+        </div>
+        <div className="formField">
+          <label htmlFor="intNarr" className="formLabel">Narrative (internal) </label>
+          <textarea className="formInput"
+            id='intNarr'
+            rows={5}
+            placeholder='Your narrative here...'
+            value={internalNarrative}
+            onChange={(e) => setInternalNarrative(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="formField">
+          <label htmlFor="extNarr" className="formLabel">Narrative (client-facing)</label>
+          <textarea className="formInput"
+            id='extNarr'
+            rows={4}
+            placeholder=''
+            value={externalNarrative}
+            onChange={(e) => setExternalNarrative(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="formField">
+          <button id="save" className="formButton button">Save and close</button>
+          <button id="save" className="formButton button">Close without saving</button>
+        </div>
       </form>
-  </>
+  </div>
   )
 }
