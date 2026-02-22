@@ -1,7 +1,6 @@
 // provides type safety/inference
 import type { Route } from "./+types/narrative";
 import { useState } from 'react';
-import { generateNarrative } from "../narrative/ai";
 
 export default function Component({}: Route.ComponentProps) {
   return <NarrativeView />;
@@ -19,14 +18,6 @@ function NarrativeView(){
   const [timerHours, setTimerHours] = useState(0);
   const [timerMinutes, setTimerMinutes] = useState(0);
   const [timerSeconds, setTimerSeconds] = useState(0);
-
-  async function handleSubmit() {
-    // e.preventDefault(); 
-    console.log("handleSubmit called")
-    const result = await generateNarrative(internalNarrative);
-    console.log("returned: ", result)
-    setExternalNarrative(result);
-  }
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 12, margin:"1%", width:'50%', border:'2px #a6a5a5 solid', padding:'1%' }}>
@@ -125,10 +116,6 @@ function NarrativeView(){
             value={internalNarrative}
             onChange={(e) => setInternalNarrative(e.target.value)}
           ></textarea>
-        </div>
-        <div className="formField">
-          <button id="rewrite" type="button" className="formButton button" onClick={handleSubmit}>Generate client-facing narrative</button>
-          <label className="formNote">Note: this will overwrite any existing external narrative.</label>
         </div>
         <div className="formField">
           <label htmlFor="extNarr" className="formLabel">Narrative (client-facing)</label>
