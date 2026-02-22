@@ -6,3 +6,7 @@ Wow what a great readme. Look at us go.
 - Nuthara Karunarathna
 - Jamie Honeywill
 - Phoenix Solti
+
+
+Current state of narrative view:
+![alt text](image.png)
