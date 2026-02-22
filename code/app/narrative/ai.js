@@ -1,9 +1,10 @@
 import { generateText } from 'ai';
 // import { google } from "@ai-sdk/google";
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { API_KEY } from './api_key.js' 
 
 const google = createGoogleGenerativeAI({
-  apiKey:"AIzaSyA5XltRgE1WckMKxrckoECsmopHxjNQIF0"
+  apiKey: API_KEY
 });
 
 export async function generateNarrative(prompt) {
