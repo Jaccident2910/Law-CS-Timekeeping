@@ -8,10 +8,17 @@
 
 .formLabel {
   color: #666;
-  font-size: 17px;
+  font-size: 15px;
   padding-right: 2%;
   width: 30%
 }
+
+.formNote {
+  color: #666;
+  font-size: 13px;
+  padding-right: 2%;
+}
+
 
 .formField {
   display:flex;
@@ -24,11 +31,12 @@
   padding:10px;
   border:2px #a6a5a5 solid;
   width:100%;
+  font-size:15px;
 }
 
 .timerInput {
   color: #666;
-  font-size: 17px;
+  font-size: 15px;
   width: 32%;
   padding:10px;
   border:2px #a6a5a5 solid;
@@ -36,7 +44,7 @@
 
 .formButton {
   color: rgb(247, 244, 244);
-  font-size: 17px;
+  font-size: 15px;
   padding: 1.5%;
   margin-right:1%;
   width: max-content;
