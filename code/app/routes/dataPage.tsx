@@ -1,5 +1,5 @@
 import type { Route } from "./+types/timeline";
-import { TimeLinePage } from "../Datapage/timeLineView";
+import { ProgressPage } from "../Datapage/ProgressPage";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -10,5 +10,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function TimeLineView() {
-  return <TimeLinePage />;
+  return <ProgressPage />;
 }
